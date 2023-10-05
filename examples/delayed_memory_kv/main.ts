@@ -3,5 +3,7 @@ if (import.meta.main) {
   kv.listenQueue((message: unknown) => {
     console.log(message);
   });
-  kv.enqueue("Hello World!");
+  kv.enqueue("Hello World!", {
+    delay: 10 * 1e3,
+  });
 }
